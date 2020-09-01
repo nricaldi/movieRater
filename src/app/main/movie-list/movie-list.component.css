@@ -1,0 +1,72 @@
+.movie {
+    background: #373737;
+    border-radius: 7px;
+    padding: 1rem;
+    width: 200px;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+    display: inline-block;
+    transition: all ease-in-out 250ms;
+}
+
+.movie:hover,
+.movie:focus {
+    background: #2c2c2c;
+}
+
+.icons, 
+.icons * {
+    display: inline-block;
+
+}
+
+.edit,
+.trash {
+    padding: 1rem;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all ease-in-out 250ms;
+}
+
+.edit {
+    margin-right: 1rem;
+    background: #2D3047;
+}
+
+.edit:hover,
+.edit:focus {
+    background: #1b2044;
+}
+
+.trash {
+    background: #F15152;
+}
+
+.trash:hover,
+.trash:focus {
+    background: #641616;
+}
+
+.new {
+    cursor: pointer;
+    width: 232px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: none;
+    color: #FFF;
+    outline: none;
+    border-radius: 7px;
+    background: #419D78;
+    transition: all ease-in-out 250ms;
+}
+
+.new:hover,
+.new:focus {
+    background: #154b35;
+}
+
+.seleted {
+    color: red;
+}

@@ -1,0 +1,77 @@
+form {
+    width: 452px;
+    margin-top: 4.5rem;
+}
+
+div {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-size: 1.25rem;
+    margin-bottom: .5rem;
+}
+
+input[type="text"],
+textarea {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    padding: .75rem;
+    background: #373737;
+    color: #FFF;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #373737;
+
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: none;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-bottom: solid 2px #419D78;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+    }
+    ::-webkit-scrollbar-button:start:decrement,
+    ::-webkit-scrollbar-button:end:increment  {
+    height: 10px;
+    background-color: transparent;
+    }
+    ::-webkit-scrollbar-track-piece  {
+    background-color: transparent;
+    /* -webkit-border-radius: 16px; */
+    }
+    ::-webkit-scrollbar-thumb:vertical {
+    height: 10px;
+    background-color: rgb(175, 175, 175);
+    /* -webkit-border-radius: 16px; */
+    }
+
+button {
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    padding: 1rem;
+    background: #419D78;
+    font-size: 1rem;
+    color: #FFF;
+    border-radius: 3px;
+    transition: all ease-in-out 250ms;
+    outline: none;
+}
+
+button:hover,
+button:focus {
+    /* background: #3d5066; */
+    background: #154b35;
+}

@@ -1,0 +1,17 @@
+.app {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFF;
+    height: 100vh;
+    padding: 2rem;
+    max-width: 968px;
+    margin: 0 auto;
+}
+
+.app-title {
+    margin-bottom: 2rem;
+    text-align: center;
+    /* color: #c79447; */
+    color: #E0A458;
+    font-size: 5rem;
+}
