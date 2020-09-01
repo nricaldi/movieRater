@@ -1,17 +1,19 @@
 <form [formGroup]="movieForm" (ngSubmit)="saveForm()">
-
+    <p class="loginError" *ngIf="formError">{{ formError }} </p>   
     <div>
         <label>Title</label>
         <input type="text" formControlName="title">
+        <span class="error-message">{{ titleError }}</span>
     </div>
 
     <div>
         <label>Description</label>
         <textarea type="text" formControlName="description" rows="10"></textarea>
+        <span class="error-message">{{ descriptionError }}</span>
     </div>
 
     <button type="submit">
         <span *ngIf="id">Update</span>
         <span *ngIf="!id">Create</span>
     </button>
-</form>
+</form> 
