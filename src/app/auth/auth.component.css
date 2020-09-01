@@ -2,7 +2,8 @@
 form {
     width: 452px;
     margin: 0 auto;
-    margin-top: 4.5rem;
+    margin-top: 7rem;
+    position: relative;
 }
 
 div {
@@ -25,7 +26,7 @@ input[type="password"] {
     color: #FFF;
     border: none;
     outline: none;
-    border-bottom: 2px solid #373737;
+    border: 2px solid #373737;
 
     border-radius: 3px;
     font-size: 1rem;
@@ -33,6 +34,12 @@ input[type="password"] {
 
 input[type="password"]{
     font-weight: 900;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-bottom: 2px solid #419D78;
+    /* border: solid 2px crimson; */
 }
 
 
@@ -60,5 +67,25 @@ button:focus {
     margin: 0 auto;
     margin-top: 2rem;
     cursor: pointer;
+} 
+.blue {
     color: #0093a7;
+}
+.blue:hover {
+    text-decoration: underline;
+}
+.error-message {
+    color: #F15152;
+}
+
+.loginError {
+    padding: .8rem;
+    /* font-size: 1rem; */
+    box-sizing: border-box;
+    width: 452px;
+    border-radius: 3px;
+    background: #F15152;
+    color: #EEE;
+    position: absolute;
+    top: -5rem;
 }

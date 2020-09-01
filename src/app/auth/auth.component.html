@@ -1,21 +1,34 @@
 <form [formGroup]="authForm" (ngSubmit)="saveForm()">
-
+    <p class="loginError" *ngIf="registerError">{{ registerError }} </p>    
+    <p class="loginError" *ngIf="loginError">{{ loginError }} </p>    
+    <p class="loginError" *ngIf="formError">{{ formError }} </p>    
     <div>
         <label>Username</label>
-        <input type="text" formControlName="username">
+        <input type="text" formControlName="username" [ngClass]="{'error': usernameError !== ''}">
+        <span class="error-message">{{ usernameError }}</span>
     </div>
 
     <div>
         <label>Password</label>
         <input type="password" formControlName="password">
+        <span class="error-message">{{ passwordError }}</span>
     </div>
+
+    <div *ngIf="registerMode">
+        <label>Confirm Password</label>
+        <input type="password" formControlName="confirmPassword">
+        <span class="error-message">{{ confirmError }}</span>
+    </div>
+
     <button type="submit">
         <span *ngIf="!registerMode">Log In</span>
         <span *ngIf="registerMode">Register</span>
     </button>
+    
+    
 </form>
 
 <div class="loginOrRegister">
-    <span *ngIf="!registerMode" (click)="registerMode = true">Don't have an account? Register Here.</span>
-    <span *ngIf="registerMode" (click)="registerMode = false">Already have an account? Log in here</span>
+    <span *ngIf="!registerMode" (click)="registerMode = true">Don't have an account? <span class="blue">Register Here.</span></span>
+    <span *ngIf="registerMode" (click)="registerMode = false">Already have an account? <span class="blue">Log in here</span></span>
 </div>
