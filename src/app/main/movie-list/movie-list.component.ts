@@ -17,9 +17,9 @@ export class MovieListComponent implements OnInit {
 
   // Fetch the data from main component to Input to child components
   @Input() public movies : Movie[] = [];
-  @Output() public selectMovie = new EventEmitter<Movie>();
-  @Output() public editedMovie = new EventEmitter<Movie>();
   @Output() public createMovie = new EventEmitter();
+  @Output() public editedMovie = new EventEmitter<Movie>();
+  @Output() public selectMovie = new EventEmitter<Movie>();
   @Output() public deletedMovie = new EventEmitter<Movie>();
 
   ngOnInit(): void {

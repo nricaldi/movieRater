@@ -15,6 +15,7 @@ export class MovieDetailComponent implements OnInit {
 
   @Input() public movie : Movie = null;
   @Output() public updateMovie = new EventEmitter<Movie>();
+  // @Output() public updateList = new EventEmitter();
 
   public username : string = '';
 
@@ -32,14 +33,20 @@ export class MovieDetailComponent implements OnInit {
   }
 
   // sends the rating and id of movie to the api service to rate selected movie 
+  // 
   rate(rating: number) {
-    this.apiService.rateMovie(rating, this.movie.id).subscribe(() => this.update());
+    this.apiService.rateMovie(rating, this.movie.id).subscribe(res => {
+      console.log(res);
+      this.update();
+    });
   }
 
   // updates the selected movie 
   update() {
     this.apiService.getMovie(this.movie.id).subscribe((movie: Movie) => {
       this.updateMovie.emit(movie);
+      console.log('nicolas ricaldi');
+      
     });
   }
 

@@ -38,12 +38,15 @@ export class MainComponent implements OnInit {
     observable.subscribe((data: Movie[]) => {
       this.movies = data;
     });
+    // console.log('movies updated')
   }
 
   // set the movie to view or to send updated information
   selectMovie(movie: Movie) {
     this.movieToEdit = null;
-    this.selectedMovie = movie;
+    this.selectedMovie = movie; 
+    this.movieUpdated(movie);
+    // console.log('nicolas ricaldi 2 ');
   }
 
   // set the movie to edit to send to the form component 
@@ -77,6 +80,8 @@ export class MainComponent implements OnInit {
     if (index >= 0)
       this.movies[index] = movie;
 
+    // this.getAllMovies();
+    
     this.movieToEdit = null;
   }
 }
