@@ -8,7 +8,8 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class ApiService {
 
-  baseUrl = 'http://127.0.0.1:8000/';
+  // baseUrl = 'http://127.0.0.1:8000/';
+  baseUrl = 'https://nicks-movie-rater.herokuapp.com/';
   baseMovieUrl = `${this.baseUrl}api/movies/`;
 
   headers = new HttpHeaders({
@@ -45,7 +46,7 @@ export class ApiService {
   }
   
   deleteMovie(movieId: number) : Observable<any> {
-    return this._http.delete(`${this.baseMovieUrl}${movieId}/`, {headers: this.getAuthHeaders()})
+    return this._http.delete(`${this.baseMovieUrl}${movieId}/`, {headers: this.getAuthHeaders()});
   }
 
   // send rating to api

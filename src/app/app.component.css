@@ -1,4 +1,4 @@
-.app {
+/* .app {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     color: #FFF;
@@ -6,12 +6,36 @@
     padding: 2rem;
     max-width: 968px;
     margin: 0 auto;
+} */
+
+/* .app-title {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #E0A458;
+    font-size: 5rem;
+} */ 
+
+.app {
+    padding: 2rem;
+    max-width: 1500px;
+    margin: 0 auto;
+    height: 100vh;
+    box-sizing: border-box;
 }
 
 .app-title {
-    margin-bottom: 2rem;
     text-align: center;
-    /* color: #c79447; */
-    color: #E0A458;
-    font-size: 5rem;
+    margin-bottom: 2rem;
+    color: var(--title);
+}
+
+@media screen and (min-width: 768px) {
+    .app {
+        padding: 4rem;
+    }
+
+    .app-title {
+        font-size: 3rem;
+        margin-bottom: 4rem;
+    }
 }

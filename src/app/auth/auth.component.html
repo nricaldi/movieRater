@@ -1,34 +1,43 @@
-<form [formGroup]="authForm" (ngSubmit)="saveForm()">
-    <p class="loginError" *ngIf="registerError">{{ registerError }} </p>    
-    <p class="loginError" *ngIf="loginError">{{ loginError }} </p>    
-    <p class="loginError" *ngIf="formError">{{ formError }} </p>    
-    <div>
-        <label>Username</label>
-        <input type="text" formControlName="username" [ngClass]="{'error': usernameError !== ''}">
-        <span class="error-message">{{ usernameError }}</span>
-    </div>
 
-    <div>
-        <label>Password</label>
-        <input type="password" formControlName="password">
-        <span class="error-message">{{ passwordError }}</span>
-    </div>
-
-    <div *ngIf="registerMode">
-        <label>Confirm Password</label>
-        <input type="password" formControlName="confirmPassword">
-        <span class="error-message">{{ confirmError }}</span>
-    </div>
-
-    <button type="submit">
-        <span *ngIf="!registerMode">Log In</span>
-        <span *ngIf="registerMode">Register</span>
-    </button>
+<section class="form-section">
+    <form [formGroup]="authForm" (ngSubmit)="saveForm()">
+        <!-- <p class="loginError" *ngIf="registerError">{{ registerError }} </p>    
+        <p class="loginError" *ngIf="loginError">{{ loginError }} </p>    
+        <p class="loginError" *ngIf="formError">{{ formError }} </p>     -->
     
+        <div>
+            <label>Username</label>
+            <input type="text" formControlName="username" >
+            <!-- <span class="error-message">{{ usernameError }}</span> -->
+            <span *ngIf="authForm.get('username').dirty && authForm.get('username').hasError('required')" class="form-error">Username is required</span>
+            <span *ngIf="authForm.get('username').dirty && authForm.get('username').hasError('minlength')" class="form-error">Username must be at least 3 characters</span>
+        </div>
     
-</form>
-
-<div class="loginOrRegister">
-    <span *ngIf="!registerMode" (click)="registerMode = true">Don't have an account? <span class="blue">Register Here.</span></span>
-    <span *ngIf="registerMode" (click)="registerMode = false">Already have an account? <span class="blue">Log in here</span></span>
-</div>
+        <div>
+            <label>Password</label>
+            <input type="password" formControlName="password">
+            <!-- <span class="error-message">{{ passwordError }}</span> -->
+            <span *ngIf="authForm.get('password').dirty && authForm.get('password').hasError('required')" class="form-error">Password is required</span>
+            <span *ngIf="authForm.get('password').touched && authForm.get('password').hasError('minlength')" class="form-error">Password must be at least 8 characters</span>
+        </div>
+    
+        <div *ngIf="registerMode">
+            <label>Confirm Password</label>
+            <input type="password" formControlName="confirmPassword">
+            <!-- <span class="error-message">{{ confirmError }}</span> -->
+            <span *ngIf="authForm.get('confirmPassword').touched && authForm.get('confirmPassword').hasError('mustMatch')" class="form-error">Passwords must match</span>
+        </div>
+    
+        <button type="submit">
+            <span *ngIf="!registerMode">Log In</span>
+            <span *ngIf="registerMode">Register</span>
+        </button>
+        
+             
+    </form>
+    
+    <div class="loginOrRegister">
+        <p *ngIf="!registerMode" (click)="initForm()">Don't have an account? <span class="blue">Register Here.</span></p>
+        <p *ngIf="registerMode" (click)="initForm()">Already have an account? <span class="blue">Log in here</span></p>
+    </div> 
+</section>

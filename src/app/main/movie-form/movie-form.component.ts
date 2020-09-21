@@ -53,7 +53,7 @@ export class MovieFormComponent implements OnInit {
           error => console.log(error)
         )}
     }
-
+ 
   }
 
    // Form Validation

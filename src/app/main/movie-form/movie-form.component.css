@@ -1,4 +1,4 @@
-form {
+/* form {
     width: 452px;
     margin-top: 4.5rem;
     position: relative;
@@ -37,9 +37,9 @@ textarea {
 input[type="text"]:focus,
 textarea:focus {
     border-bottom: solid 2px #419D78;
-}
+} */
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     width: 5px;
     height: 10px;
     }
@@ -50,15 +50,13 @@ textarea:focus {
     }
     ::-webkit-scrollbar-track-piece  {
     background-color: transparent;
-    /* -webkit-border-radius: 16px; */
     }
     ::-webkit-scrollbar-thumb:vertical {
     height: 10px;
     background-color: rgb(175, 175, 175);
-    /* -webkit-border-radius: 16px; */
-    }
+} */
 
-button {
+/* button {
     cursor: pointer;
     border: none;
     width: 100%;
@@ -73,12 +71,11 @@ button {
 
 button:hover,
 button:focus {
-    /* background: #3d5066; */
     background: #154b35;
-}
+} */
 
 
-
+/* 
 .error-message {
     color: #F15152;
     display: block;
@@ -94,4 +91,4 @@ button:focus {
     color: #EEE;
     position: absolute;
     top: -4.5rem;
-}
+} */
