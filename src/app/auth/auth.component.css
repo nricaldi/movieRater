@@ -79,16 +79,22 @@ button:focus {
     margin-top: 5px;
 }
 
+*/
 .loginError {
+    opacity: 0;
+    /* display: none; */
     padding: .8rem;
     box-sizing: border-box;
-    width: 452px;
+    width: 100%;
     border-radius: 3px;
-    background: #F15152; 
-    color: #EEE;
-    position: absolute;
-    top: -5rem;
-} */
+    background: var(--red); 
+    margin-bottom: 1rem;
+    transition: all 250ms ease-in-out;
+} 
+
+input.ng-dirty.ng-invalid {
+    border-color: var(--red);
+}
 
 .form-section {
     max-width: 640px;
@@ -103,3 +109,14 @@ button:focus {
 .blue:hover {
     text-decoration: underline;
 }
+
+.form-error {
+    display: inline-block;
+    color: var(--red);
+    margin-top: .5rem;
+}
+
+.show {
+    opacity: 1;
+    /* display: block; */
+} 

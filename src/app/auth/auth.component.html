@@ -1,16 +1,15 @@
 
 <section class="form-section">
     <form [formGroup]="authForm" (ngSubmit)="saveForm()">
-        <!-- <p class="loginError" *ngIf="registerError">{{ registerError }} </p>    
-        <p class="loginError" *ngIf="loginError">{{ loginError }} </p>    
-        <p class="loginError" *ngIf="formError">{{ formError }} </p>     -->
+        <p class="loginError" *ngIf="registerMode"[ngClass]="{'show': registerError}">Username already in use</p>    
+        <p class="loginError" *ngIf="!registerMode" [ngClass]="{'show': loginError}">Email or password incorrect</p>    
     
         <div>
             <label>Username</label>
             <input type="text" formControlName="username" >
             <!-- <span class="error-message">{{ usernameError }}</span> -->
             <span *ngIf="authForm.get('username').dirty && authForm.get('username').hasError('required')" class="form-error">Username is required</span>
-            <span *ngIf="authForm.get('username').dirty && authForm.get('username').hasError('minlength')" class="form-error">Username must be at least 3 characters</span>
+            <span *ngIf="authForm.get('username').touched && authForm.get('username').hasError('minlength')" class="form-error">Username must be at least 3 characters</span>
         </div>
     
         <div>
@@ -28,7 +27,7 @@
             <span *ngIf="authForm.get('confirmPassword').touched && authForm.get('confirmPassword').hasError('mustMatch')" class="form-error">Passwords must match</span>
         </div>
     
-        <button type="submit">
+        <button type="submit" [disabled]="!authForm.valid">
             <span *ngIf="!registerMode">Log In</span>
             <span *ngIf="registerMode">Register</span>
         </button>
@@ -41,3 +40,4 @@
         <p *ngIf="registerMode" (click)="initForm()">Already have an account? <span class="blue">Log in here</span></p>
     </div> 
 </section>
+ 
