@@ -3,3 +3,10 @@
     grid-template-columns: 1fr 1fr;
 
 } */
+
+main {
+    height: 90vh;
+    /* background: red; */
+    box-sizing: border-box;
+    padding: 0 2rem;
+}

@@ -11,9 +11,11 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MovieFormComponent } from './movie-form/movie-form.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
+  {path: 'home', component: HomeComponent},
   {path: 'movies', component: MainComponent}
 ];
 
@@ -22,7 +24,8 @@ const routes: Routes = [
     MainComponent,
     MovieListComponent,
     MovieDetailComponent,
-    MovieFormComponent
+    MovieFormComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

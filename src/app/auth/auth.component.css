@@ -80,6 +80,16 @@ button:focus {
 }
 
 */
+
+
+.form-section {
+    padding: 2rem;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .loginError {
     opacity: 0;
     /* display: none; */
@@ -97,8 +107,8 @@ input.ng-dirty.ng-invalid {
 }
 
 .form-section {
-    max-width: 640px;
-    margin: 0 auto;
+    /* max-width: 640px;
+    margin: 0 auto; */
 }
 
 .blue {

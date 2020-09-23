@@ -2,7 +2,7 @@
 <section class="form-section">
     <form [formGroup]="authForm" (ngSubmit)="saveForm()">
         <p class="loginError" *ngIf="registerMode"[ngClass]="{'show': registerError}">Username already in use</p>    
-        <p class="loginError" *ngIf="!registerMode" [ngClass]="{'show': loginError}">Email or password incorrect</p>    
+        <p class="loginError" *ngIf="!registerMode" [ngClass]="{'show': loginError}">Username or password incorrect</p>    
     
         <div>
             <label>Username</label>
@@ -32,12 +32,12 @@
             <span *ngIf="registerMode">Register</span>
         </button>
         
-             
+        
+        <div class="loginOrRegister">
+            <p *ngIf="!registerMode" (click)="initForm()">Don't have an account? <span class="blue">Register Here.</span></p>
+            <p *ngIf="registerMode" (click)="initForm()">Already have an account? <span class="blue">Log in here</span></p>
+        </div> 
     </form>
     
-    <div class="loginOrRegister">
-        <p *ngIf="!registerMode" (click)="initForm()">Don't have an account? <span class="blue">Register Here.</span></p>
-        <p *ngIf="registerMode" (click)="initForm()">Already have an account? <span class="blue">Log in here</span></p>
-    </div> 
 </section>
  

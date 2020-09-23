@@ -20,7 +20,17 @@ export class ApiService {
   constructor(private _http: HttpClient, private cookieService: CookieService) { }
 
   // get all movies from api
+  // getMovies() : Observable<any> {
+  //   return this._http.get(this.baseMovieUrl, {headers: this.getAuthHeaders()});
+  // }
+
+  // Get all movies
   getMovies() : Observable<any> {
+    return this._http.get(this.baseMovieUrl, { headers: this.headers });
+  }
+
+  // Get authorized movies
+  getAuthMovies() : Observable<any> {
     return this._http.get(this.baseMovieUrl, {headers: this.getAuthHeaders()});
   }
 

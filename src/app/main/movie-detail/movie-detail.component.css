@@ -66,3 +66,10 @@ button:hover {
     cursor: pointer;
     font-size: 1.5em;
 } */
+
+.movie-details {
+    height: 60vh;
+    height: calc(60vh - 1rem);
+    background: var(--light-bg);
+    border-radius: 20px;
+}

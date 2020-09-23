@@ -1,0 +1,12 @@
+<section class="home">
+    <div class="hero">
+        <h1>Welcome to Movie Rater</h1>
+        <p>Select a movie to view</p>
+        <p>Log in to edit, delete, and rate movies.</p>
+    </div>
+    
+    <div *ngIf="!isLoggedIn">
+        <button routerLink="/auth">Sign Up</button>
+        <p class="login">...or just <a routerLink="/auth">Log in</a></p>
+    </div>
+</section>

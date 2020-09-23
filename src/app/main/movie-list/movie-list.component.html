@@ -1,19 +1,35 @@
-<div class="movie-list">
+<section class="movie-list">
     
-    <button class="new" (click)="newMovie()"><fa-icon [icon]="faPlus" ></fa-icon> </button>
+    <!-- <button class="new" (click)="newMovie()"><fa-icon [icon]="faPlus" ></fa-icon> </button> -->
     
-    <div *ngFor="let movie of movies">
-        <div class="movie" (click)="movieClicked(movie)">
-            <h3>{{ movie.title }}</h3>
-        </div>
-        <div class="icons">
-            <div class="edit" (click)="editMovie(movie)">
-                <fa-icon [icon]="faEdit" ></fa-icon> 
+    <h2 class="featured">Featured</h2>
+    <div class="movies">
+
+        <div *ngFor="let movie of movies" (click)="movieClicked(movie)">
+            <div class="movie" >
+                <h3 class="title">{{ movie.title }}</h3>
+                <!-- <p class="rating">{{ movie.avg_rating }}</p> -->
+                <div class="stars">
+                    <!-- {{ movie.avg_rating.toFixed(1) }} -->
+                    <fa-icon [icon]="faStar" [ngClass]="{'star': movie.avg_rating > 0}"></fa-icon> 
+                    <fa-icon [icon]="faStar" [ngClass]="{'star': movie.avg_rating > 1}"></fa-icon> 
+                    <fa-icon [icon]="faStar" [ngClass]="{'star': movie.avg_rating > 2}"></fa-icon> 
+                    <fa-icon [icon]="faStar" [ngClass]="{'star': movie.avg_rating > 3}"></fa-icon> 
+                    <fa-icon [icon]="faStar" [ngClass]="{'star': movie.avg_rating > 4}"></fa-icon> 
+                    <!-- ({{ movie.no_of_ratings }}) -->
+                </div>
+                <p class="view">View</p>
             </div>
-            <div class="trash" (click)="deleteMovie(movie)">
-                <fa-icon [icon]="faTrash" ></fa-icon> 
-            </div>
+            <!-- <div class="icons" *ngIf="!isLoggedIn">
+                <div class="edit" (click)="editMovie(movie)">
+                    <fa-icon [icon]="faEdit" ></fa-icon> 
+                </div>
+                <div class="trash" (click)="deleteMovie(movie)">
+                    <fa-icon [icon]="faTrash" ></fa-icon> 
+                </div>
+            </div> -->
         </div>
+
     </div>
 
-</div> 
+</section>  

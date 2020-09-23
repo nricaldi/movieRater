@@ -29,7 +29,7 @@
     cursor: pointer;
     transition: all ease-in-out 250ms;
 }
-
+ 
 .edit {
     margin-right: 1rem;
     background: #2D3047;
@@ -70,3 +70,72 @@
 .seleted {
     color: red;
 } */
+
+.movie-list {
+    height: 25vh;
+    /* background: #222; */
+    /* overflow: hidden; */
+}
+
+.featured {
+    margin: 1rem 0;
+}
+
+.movies {
+    display: flex;
+    /* flex-direction: row; */
+    overflow: scroll;
+    margin-right: -2rem;
+    height: calc(100% - 2rem);
+}
+
+.movie {
+    background: var(--light-bg);
+    border-radius: 20px;
+    /* width: 50px; */
+    width: 150px;
+    height: 100%;
+    margin-right: 2rem;
+    padding: 1rem;
+    box-sizing: border-box;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie .title {
+    /* background: #000; */
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px; */
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.movie .rating {
+    /* background: red; */
+    /* justify-self: center; */
+}
+
+.movie .view {
+    background: var(--dark-gray);
+    margin-left: -1rem;
+    margin-right: -1rem;
+    margin-bottom: -1rem;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    font-weight: 600;
+}
+
+.star{
+    color: var(--accent);
+}

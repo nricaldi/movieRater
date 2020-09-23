@@ -9,7 +9,7 @@ import { Movie } from '../../models/Movie';
 @Component({
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
-  styleUrls: ['./movie-detail.component.css']
+  styleUrls: ['./movie-detail.component.css'] 
 })
 export class MovieDetailComponent implements OnInit {  
 
@@ -50,11 +50,11 @@ export class MovieDetailComponent implements OnInit {
     });
   }
 
-  logout() {
-    console.log('logout');
+  // logout() {
+  //   console.log('logout');
     
-    this.cookieService.delete('token');
-    this.router.navigate(['/auth']);
-  }
+  //   this.cookieService.delete('token');
+  //   this.router.navigate(['/auth']);
+  // }
 
 } 

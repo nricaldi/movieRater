@@ -1,0 +1,24 @@
+<nav>
+    
+    <h1 class="logo" [ngClass]="{'logo-active' : isOpen}" routerLink="movies"> Movie Rater</h1>
+
+    <div class="burger" (click)="toggleMenu()" [ngClass]="{'burger-active' : isOpen}">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+    </div>
+
+
+
+    <ul [ngClass]="isOpen ? 'active' : 'not-active'">
+        <li (click)="isOpen = false" routerLink="movies"><a href="#">All movies</a></li>
+        <li (click)="isOpen = false"><a href="#">Highest Rated</a></li>
+        <li (click)="isOpen = false"><a href="#">Recent</a></li>
+        
+        <li (click)="logOut()" *ngIf="isLoggedIn" ><a>Log out</a></li>
+        <li (click)="isOpen = false" *ngIf="!isLoggedIn" routerLink="auth"><a>Log in</a></li>
+    </ul>
+
+</nav>
+
+

@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { Movie } from '../../models/Movie';
 
 @Component({
@@ -11,12 +9,13 @@ import { Movie } from '../../models/Movie';
 })
 export class MovieListComponent implements OnInit {
 
-  faEdit = faEdit;
-  faTrash = faTrash;
-  faPlus = faPlus;
+  faStar = faStar;
+  // faTrash = faTrash;
+  // faPlus = faPlus;
 
   // Fetch the data from main component to Input to child components
   @Input() public movies : Movie[] = [];
+  @Input() public isLoggedIn : boolean;
   @Output() public createMovie = new EventEmitter();
   @Output() public editedMovie = new EventEmitter<Movie>();
   @Output() public selectMovie = new EventEmitter<Movie>();
@@ -43,7 +42,7 @@ export class MovieListComponent implements OnInit {
 
  deleteMovie = (movie: Movie) => {
   // console.log('movie to delete is', movie.title);
-  if(confirm("Are you sure you wanr to delete " + movie.title + "?")) {
+  if(confirm("Are you sure you want to delete " + movie.title + "?")) {
     this.deletedMovie.emit(movie);
   }
  } 

@@ -18,14 +18,21 @@ export class MainComponent implements OnInit {
   public selectedMovie: Movie = null;
   // Movie to edit
   public movieToEdit: Movie = null;
+  // Logged in user or not 
+  public isLoggedIn: boolean = false;
+
+  public home: boolean = true;
+  // public test: boolean = false;
 
   constructor(private apiService: ApiService,  private cookieService: CookieService, private router: Router) { }
 
   ngOnInit(): void {
     const token = this.cookieService.get('token');
     console.log(token);
-    if(!token) {
-      this.router.navigate(['/auth']);
+    if(token) {
+      // this.router.navigate(['/auth']);'  
+      this.getAuthMovies();
+      this.isLoggedIn = true;
     }
     else {
       this.getAllMovies();
@@ -41,10 +48,18 @@ export class MainComponent implements OnInit {
     // console.log('movies updated')
   }
 
+  getAuthMovies(): void {
+    let observable = this.apiService.getAuthMovies();
+    observable.subscribe((data: Movie[]) => {
+      this.movies = data;
+    });
+  }
+
   // set the movie to view or to send updated information
   selectMovie(movie: Movie) {
     this.movieToEdit = null;
     this.selectedMovie = movie; 
+    this.home = false;
     this.movieUpdated(movie);
     // console.log('nicolas ricaldi 2 ');
   }
@@ -52,11 +67,13 @@ export class MainComponent implements OnInit {
   // set the movie to edit to send to the form component 
   editMovie(movie: Movie) {
     this.selectedMovie = null;
+    this.home = false;
     this.movieToEdit = movie;
   }
 
   createMovie() {
     this.selectedMovie = null;
+    this.home = false;
     this.movieToEdit = {id: null, title: '', description: '', avg_rating: null, no_of_ratings: null};
   }
 

@@ -9,14 +9,16 @@ import { AuthModule } from './auth/auth.module';
 
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NavComponent } from './nav/nav.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'auth'}
+  {path: '', pathMatch: 'full', redirectTo: 'movies'}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
