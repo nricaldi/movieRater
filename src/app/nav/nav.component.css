@@ -111,3 +111,69 @@ ul li a {
 .burger-active .line3{
     transform: translateY(-7px) rotate(135deg); 
 }
+
+
+@media screen and (min-width: 768px) {
+    .burger {
+        display: none;
+    } 
+
+    .logo {
+        font-size: 2rem;
+    }
+    
+    ul {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: auto;
+        height: auto;
+        display: block !important;
+        transition: none;
+        opacity: 1;
+    }
+    
+    ul li {
+        list-style-type: none;
+        margin: 0;
+        /* margin-left: 1.5rem; */
+        display: inline-block;
+    }
+    
+    ul li a {
+        text-decoration: none;
+        color: var(--light);
+        font-weight: 600;
+        font-size: 1rem;    
+        padding: 1rem;
+        
+        transition: all 250ms ease;
+
+     }
+
+    ul li a:last-child {
+        /* padding-right: 0; */
+    }
+
+    ul li a:hover,
+    ul li a:focus {
+        color: var(--gray);
+    }
+    
+    .active {
+        background: none;
+    }
+    
+    .not-active {
+        display: block;
+    }
+    
+    .not-active {
+        opacity: 1;
+    }
+    
+    .active {
+        opacity: 1;
+        right: 0;
+    }
+}

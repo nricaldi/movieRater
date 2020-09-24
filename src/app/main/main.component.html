@@ -1,7 +1,7 @@
 <main class="main">
 
     <div>
-        <app-home *ngIf="home" [movie]="selectedMovie" [isLoggedIn]="isLoggedIn"></app-home>
+        <app-home *ngIf="home" [isLoggedIn]="isLoggedIn"></app-home>
         <app-movie-detail [movie]="selectedMovie" (updateMovie)="selectMovie($event)"></app-movie-detail>
         <app-movie-form *ngIf="movieToEdit" [movie]="movieToEdit" 
             (movieCreated)="movieCreated($event)" 

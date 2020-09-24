@@ -72,4 +72,8 @@ button:hover {
     height: calc(60vh - 1rem);
     background: var(--light-bg);
     border-radius: 20px;
+    margin: 0 2rem;
+    box-sizing: border-box;
+    padding: 2rem;
 }
+

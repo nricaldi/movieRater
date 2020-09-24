@@ -24,16 +24,13 @@ export class NavComponent implements OnInit {
 
   toggleMenu(): void {
     this.isOpen = !this.isOpen;
-    const token = this.cookieService.get('token');
-    if (token) {
-      this.isLoggedIn = true;
-    }
+    this.ngOnInit();
   }
 
   logOut(): void {
     this.isOpen = false;
     this.cookieService.delete('token');
-    this.router.navigate['/movies'];
+    this.router.navigate(['/auth']);
   }
 
 }

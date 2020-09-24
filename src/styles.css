@@ -10,7 +10,7 @@
     --disabled: #e0a55893;
     --light: #F5F1ED;
     --gray: #B4B4B4;
-    --dark-gray: #5e5e5e;
+    --dark-gray: #44463F;
     --blue: #0093a7;
     --red: #F15152;
 }
@@ -90,3 +90,7 @@ button:disabled {
     /* color: #949494; */
     cursor: not-allowed;
 }
+
+
+
+

@@ -36,6 +36,7 @@
         <div class="loginOrRegister">
             <p *ngIf="!registerMode" (click)="initForm()">Don't have an account? <span class="blue">Register Here.</span></p>
             <p *ngIf="registerMode" (click)="initForm()">Already have an account? <span class="blue">Log in here</span></p>
+            <p class="blue continue" routerLink="../movies">Continue as guest</p>
         </div> 
     </form>
     

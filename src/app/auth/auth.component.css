@@ -106,11 +106,6 @@ input.ng-dirty.ng-invalid {
     border-color: var(--red);
 }
 
-.form-section {
-    /* max-width: 640px;
-    margin: 0 auto; */
-}
-
 .blue {
     color: var(--blue);
     cursor: pointer;
@@ -130,3 +125,7 @@ input.ng-dirty.ng-invalid {
     opacity: 1;
     /* display: block; */
 } 
+
+.continue {
+    margin-top: .5rem;
+}

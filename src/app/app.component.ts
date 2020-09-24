@@ -6,8 +6,8 @@ import { faFilm } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
 
-  faFilm = faFilm;
-  
+  public isLoggedIn: boolean;
 }

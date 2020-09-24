@@ -11,8 +11,8 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.isLoggedIn);
+  ngOnInit(): void { 
     
   }
 }
+ 

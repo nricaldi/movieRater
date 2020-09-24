@@ -7,6 +7,6 @@
 main {
     height: 90vh;
     /* background: red; */
-    box-sizing: border-box;
-    padding: 0 2rem;
+    /* box-sizing: border-box; */
+    /* padding: 0 2rem; */
 }

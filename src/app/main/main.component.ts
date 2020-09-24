@@ -20,7 +20,7 @@ export class MainComponent implements OnInit {
   public movieToEdit: Movie = null;
   // Logged in user or not 
   public isLoggedIn: boolean = false;
-
+  // If home should be displayed or not
   public home: boolean = true;
   // public test: boolean = false;
 
@@ -38,7 +38,7 @@ export class MainComponent implements OnInit {
       this.getAllMovies();
     }
   }
-
+ 
   getAllMovies() {
     // make api call to get all movies
     let observable = this.apiService.getMovies();
@@ -59,7 +59,7 @@ export class MainComponent implements OnInit {
   selectMovie(movie: Movie) {
     this.movieToEdit = null;
     this.selectedMovie = movie; 
-    this.home = false;
+    this.home = false; // makes home component go away
     this.movieUpdated(movie);
     // console.log('nicolas ricaldi 2 ');
   }
@@ -67,13 +67,13 @@ export class MainComponent implements OnInit {
   // set the movie to edit to send to the form component 
   editMovie(movie: Movie) {
     this.selectedMovie = null;
-    this.home = false;
+    this.home = false; // makes home component go away
     this.movieToEdit = movie;
   }
 
   createMovie() {
     this.selectedMovie = null;
-    this.home = false;
+    this.home = false; // makes home component go away
     this.movieToEdit = {id: null, title: '', description: '', avg_rating: null, no_of_ratings: null};
   }
 
