@@ -50,6 +50,14 @@ export class MovieDetailComponent implements OnInit {
     });
   }
 
+  editMovie(): void {
+    
+  }
+
+  deleteMovie(): void {
+
+  }
+
   // logout() {
   //   console.log('logout');
     

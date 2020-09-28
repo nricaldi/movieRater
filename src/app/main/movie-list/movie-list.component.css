@@ -98,6 +98,7 @@
     margin-right: 1rem;
     padding: 1rem;
     box-sizing: border-box;
+    cursor: pointer;
 
 
     display: flex;
@@ -106,7 +107,13 @@
     align-items: center;
 }
 
+.movie:hover,
+.movie:focus {
+    background: #000;
+}
+
 .movie .title {
+    text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;

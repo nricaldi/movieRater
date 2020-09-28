@@ -67,13 +67,112 @@ button:hover {
     font-size: 1.5em;
 } */
 
-.movie-details {
+#movie-details {
     height: 60vh;
     height: calc(60vh - 1rem);
-    background: var(--light-bg);
-    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 0 2rem;
-    box-sizing: border-box;
-    padding: 2rem;
 }
 
+.add-movie {
+    width: 100%;
+    max-width: 575px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.add-movie h1 {
+    font-weight: 600;
+}
+
+.movie-details {
+    background: var(--light-bg);
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 575px;
+    height: 100%;
+    max-height: 450px !important;
+}
+
+
+/* .detail-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+
+.movie-title {
+    font-weight: 600;
+    /* margin-bottom: 1rem; */
+}
+
+.stars {
+    /* margin-bottom: .5rem; */
+    margin: 1rem 0;
+}
+
+.movie-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    margin-bottom: 2rem;
+    color: var(--gray);
+}
+
+.buttons button {
+    width: 47%;
+    color: var(--light);
+}
+
+.edit {
+    background: var(--blue);
+}
+
+.delete {
+    background: var(--red);
+    margin-right: 6%;
+}
+
+.rate-title {
+    border-top: 1px solid var(--gray);
+    padding-top: 1rem;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.star-rater {
+    cursor: pointer;
+    padding-right: .25rem;
+    color: var(--gray);
+    height: 16px;
+}
+
+.yellow {
+    color: var(--accent)
+}
+
+
+@media screen and (min-width: 768px) {
+    .movie-details {
+        height: 60vh;
+        height: calc(60vh - 1rem);
+        background: var(--light-bg);
+        border-radius: 20px;
+        margin: 0 2rem;
+        box-sizing: border-box;
+        padding: 2rem;
+        margin: 0 auto;
+    }
+}
