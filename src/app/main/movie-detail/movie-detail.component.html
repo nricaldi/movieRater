@@ -5,9 +5,9 @@
     <!-- <h1>{{ movie?.title }}</h1>
     <p>{{ movie?.description }}</p> -->
 
-    <div class="add-movie">
+    <div class="add-movie" *ngIf="isLoggedIn">
         <h1>Add Movie</h1>
-        <button>+</button>
+        <button (click)="newMovie()">+</button>
     </div>
 
     <div class="movie-details">
@@ -32,9 +32,9 @@
         
         <div class="rate-container">
     
-            <div class="buttons">
-                <button class="delete">Delete</button>
-                <button class="edit">Edit</button>
+            <div class="buttons" *ngIf="isLoggedIn">
+                <button class="delete" (click)="deleteMovie()">Delete</button>
+                <button class="edit" (click)="editMovie()">Edit</button>
             </div>
     
             <h2 class="rate-title">Rate it!</h2>

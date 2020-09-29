@@ -4,10 +4,11 @@
 
 :root {
     --main-bg: #2A2C24;
+    --dark-bg: #2c2e27;
     --light-bg: #33352d;
     --accent: #E0A458;
     --hover: #be873e;
-    --disabled: #e0a55893;
+    --disabled: #e0a55893; 
     --light: #F5F1ED;
     --gray: #B4B4B4;
     --dark-gray: #44463F;
@@ -27,11 +28,10 @@ body {
     color: var(--light);
 }
 
-
 form {
     width: 100%;
+    max-width: 575px;
 }
-
 form div {
     margin-bottom: 1rem;
 }

@@ -156,7 +156,7 @@ button:hover {
     cursor: pointer;
     padding-right: .25rem;
     color: var(--gray);
-    height: 16px;
+    
 }
 
 .yellow {

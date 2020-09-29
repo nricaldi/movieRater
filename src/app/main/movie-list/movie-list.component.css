@@ -80,6 +80,7 @@
 
 .featured {
     margin: 1rem 0;
+    font-weight: 600;
 }
 
 .movies {
@@ -93,7 +94,7 @@
     background: var(--light-bg);
     border-radius: 20px;
     /* width: 50px; */
-    width: 150px;
+    width: 200px;
     height: calc(100% - 1rem);
     margin-right: 1rem;
     padding: 1rem;
@@ -105,11 +106,13 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    transition: all 250ms ease-in-out;
 }
 
 .movie:hover,
 .movie:focus {
-    background: #000;
+    background: var(--dark-bg);
 }
 
 .movie .title {
@@ -119,6 +122,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 1; /* number of lines to show */
     -webkit-box-orient: vertical;
+    font-weight: 600;
 }
 
 .movie .view {
@@ -145,3 +149,18 @@
     scrollbar-width: none;  /* Firefox */
   }
   
+
+
+@media screen and (min-width: 768px) {
+    .movie {
+        width: 250px;
+    }
+
+    .featured {
+        font-size: 2rem;
+    }
+
+    .movie .title {
+        font-size: 1.3rem;
+    }
+}

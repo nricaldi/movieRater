@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 import { ApiService } from '../../api.service';
 import { Movie } from '../../models/Movie';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-movie-detail',
@@ -14,8 +15,11 @@ import { Movie } from '../../models/Movie';
 export class MovieDetailComponent implements OnInit {  
 
   @Input() public movie : Movie = null;
+  @Input() public isLoggedIn : boolean;
   @Output() public updateMovie = new EventEmitter<Movie>();
-  // @Output() public updateList = new EventEmitter();
+  @Output() public editedMovie = new EventEmitter<Movie>();
+  @Output() public createMovie = new EventEmitter();
+  @Output() public deletedMovie = new EventEmitter<Movie>();
 
   public username : string = '';
 
@@ -26,6 +30,7 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit(): void {
     // let observable = this.apiService.getUser()
+    console.log('is logged in? ', this.isLoggedIn)
   }
 
   ratingHover(rating: number) {
@@ -35,14 +40,24 @@ export class MovieDetailComponent implements OnInit {
   // sends the rating and id of movie to the api service to rate selected movie 
   // 
   rate(rating: number) {
-    this.apiService.rateMovie(rating, this.movie.id).subscribe(res => {
-      console.log(res);
-      this.update();
-    });
+
+    if(this.isLoggedIn) {
+      this.apiService.rateMovie(rating, this.movie.id).subscribe(res => {
+        console.log(res);
+        this.update();
+      });
+    } else {
+      alert('Please log in to access all features.');
+    }
+
+  }
+
+  newMovie(): void {
+    this.createMovie.emit();
   }
 
   // updates the selected movie 
-  update() {
+  update(): void {
     this.apiService.getMovie(this.movie.id).subscribe((movie: Movie) => {
       this.updateMovie.emit(movie);
       console.log('nicolas ricaldi');
@@ -51,18 +66,13 @@ export class MovieDetailComponent implements OnInit {
   }
 
   editMovie(): void {
-    
+    this.editedMovie.emit(this.movie);
   }
 
   deleteMovie(): void {
-
+    if(confirm("Are you sure you want to delete " + this.movie.title + "?")) {
+      this.deletedMovie.emit(this.movie);
+    }
   }
-
-  // logout() {
-  //   console.log('logout');
-    
-  //   this.cookieService.delete('token');
-  //   this.router.navigate(['/auth']);
-  // }
 
 } 
